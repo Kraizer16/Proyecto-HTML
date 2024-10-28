@@ -1,0 +1,1802 @@
+@import url('https://fonts.googleapis.com/css2?family=Anybody:ital,wght@0,100..900;1,100..900&display=swap');
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+@font-face {
+    font-family: 'GulfsDisplay';
+    src: url(/PROYECTO/Fuentes/Gulfs_Display/GulfsDisplay-Condensed.ttf);
+    font-weight: bold;
+    font-style: bold;
+}
+
+@font-face {
+    font-family: 'GulfsDisplay2';
+    src: url(/PROYECTO/Fuentes/Gulfs_Display/GulfsDisplay-ExtraExpanded.ttf);
+    font-weight: bold;
+    font-style: bold;
+}
+
+html{
+    height: 100%;
+    font-family: "GulfsDisplay" "AnyBody" sans-serif;
+}
+
+body {
+    display: grid;
+    grid-template-rows: 25vh auto auto auto;
+    grid-template-areas: 
+    "nav"
+    "header"
+    "contenido"
+    "pie";   
+    min-height: 100%;
+    background-color: pink;
+}
+
+header{
+    grid-area: header;
+}
+main{
+    grid-area: contenido;
+}
+nav{
+    grid-area: nav;
+}
+footer{
+    grid-area: pie;
+}
+
+#icono-rayas-menu,
+#icono-equis-menu {
+    display: block;
+    z-index: 2;
+}
+
+.boton-navegacion {
+    position: absolute;
+    right: 2%;
+    top: 2%;
+    border: 2px solid black;
+    border-radius: 50%;
+    border-right: 4.5px solid black;
+    border-bottom: 4.5px solid black;
+    background-color: pink;
+    height: clamp(40px, 100vw, 55px);
+    width: clamp(40px, 100vw, 55px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.5);
+    position: fixed;
+    z-index: 5;
+}
+.navbar ul{
+    place-self: center;
+    font-family: "GulfsDisplay";
+    list-style-type: none;
+    line-height: 1.5;
+    font-size: clamp(1rem, 3vw, 3rem);
+}
+.navbar ul a{
+    text-decoration: none;
+}
+#checkbox-menu {
+    display: none;
+}
+
+.boton-navegacion #icono-rayas-menu {
+    height: 62%;
+    z-index: 2;
+}
+
+.boton-navegacion #icono-equis-menu {
+    height: 80%;
+    z-index: 2;
+}
+
+#icono-equis-menu {
+    display: none;
+}
+
+#checkbox-menu:checked ~ .boton-navegacion #icono-rayas-menu {
+    display: none;
+    position: fixed;
+    z-index: 5;
+}
+
+#checkbox-menu:checked ~ .boton-navegacion #icono-equis-menu {
+    display: inline;
+    z-index: 5;
+}
+
+#checkbox-menu:checked ~ .boton-navegacion {
+    filter: brightness(0.87);
+    z-index: 1;
+    z-index: 5;
+    position: fixed;
+}
+
+.navbar {
+    background-color: pink;
+    pointer-events: none;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    z-index: 1;
+}
+
+#checkbox-menu:checked ~ .navbar {
+    display: grid;
+    pointer-events: auto;
+    opacity: 1;
+    transform: translateY(0);
+    position: fixed;
+    width: 100%;
+    z-index: 4;
+}
+#checkbox-menu:not(:checked) ~ .navbar {
+    display: grid;
+    pointer-events: auto;
+    opacity: 1;
+    transform: translateY(-100%);
+    position: fixed;
+    width: 100%;
+    z-index: 4;
+}
+
+
+header{
+    display: grid;
+    font-family: 'GulfsDisplay2';
+    color: #125ef8;
+    background-color: pink;
+}
+
+.titulo{
+    display: grid;
+    text-align: center;
+    place-items: center;
+    align-items: start;
+    border-bottom: solid black;
+    line-height: 1;
+    height: 33vh; 
+}
+
+#enunciado{
+    z-index: 2;
+    font-size: clamp(1rem, 8vw, 2.5rem);
+    text-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    -webkit-text-stroke: 1px blue;
+}
+
+#m{
+    position: relative;
+    left: 35%;
+    width: 13%;
+}
+
+#star_x{
+    position: absolute;
+    top: 30%;
+    left: 20%;
+    z-index: 2;
+    width: 5%;
+}
+#star_y{
+    position: relative;
+    right: 40%;
+    bottom: 80%;
+    z-index: 2;
+    width: 8%;
+}
+#star_z{
+    position: relative;
+    bottom: 100%;
+    left: 39%;
+    z-index: 2;
+    width: 5%;
+}
+#espiral{
+    display: none;
+}
+
+#pie-inicio, #pie-inicio2{
+    display: none;
+}
+
+.subheader{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    background-color: rgb(255, 255, 117);
+    height: 42vh;
+}
+
+#imagen_principal{
+    place-self: center;
+    position: absolute;
+    width: 60%;
+    height: 60%;
+    border: solid black 2px;
+    border-top-left-radius: 90% 60%;
+    border-top-right-radius: 90% 60%;
+    border-bottom-left-radius: 90% 60%;
+    border-bottom-right-radius: 90% 60%;
+    object-fit:cover;
+}
+#imagen_principal2{
+    display: none;
+}
+#imagen_principal3{
+    display: none;
+}
+#cara_rosa{
+    z-index: 1;
+    grid-row: 2;
+    grid-column: 1;
+    width: 45%;
+    place-self: end;
+    align-self: start;
+}
+#luna1{
+    grid-row: 2;
+    grid-column: 1;
+    place-self: start;
+    align-self: end;
+    width: 40%;
+    padding-left: 5%;
+    padding-bottom: 5%;
+}
+#luna2{
+    grid-column: 3;
+    grid-row: 2;
+    place-self: end;
+    width: 40%;
+    padding-right: 5%;
+    padding-bottom: 5%;
+}
+
+.nosotros{
+    background-color: rgb(255, 255, 117);
+    display: grid;
+    grid-template-rows: repeat(4, auto);
+    grid-template-columns: 65%;
+    padding-top: 5%;
+    place-content: center;
+}
+.nosotros h1{
+    grid-row: 1;
+    font-family: "GulfsDisplay2";
+    font-size: clamp(3rem, 9vw, 5.5rem);
+    line-height: 0.8;
+    place-self: left;
+    color: transparent;
+    -webkit-text-stroke: 2px blue;
+    padding-bottom: 4%;
+}
+.nosotros .parrafo{
+    grid-column: 1;
+    grid-row: 2;
+    font-family: 'Anybody';
+    font-weight: 650;
+    word-spacing: 10px;
+    font-size: clamp(1rem, 3vw, 2.5rem);
+    line-height: 1.5;
+}
+#nupcialistas{
+    grid-row: 3;
+    grid-column: 1;
+    font-family: 'Anybody';
+    font-weight: 900;
+    font-size: clamp(0.8rem, 2.5vw, 2rem);
+    text-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+#anillos{
+    position: relative;
+    align-self:center;
+    place-self: end;
+    right: 20%;
+    grid-row: 2 / span 2;
+    grid-column: 1;
+    width: 20%;
+}
+#nupciolistas{
+    position: relative;
+    align-self:center;
+    place-self: end;
+    right: 5%;
+    grid-row: 2 / span 2;
+    grid-column: 1;
+    width: 20%;
+}
+
+.contenedor{
+    padding: 10%;
+    grid-column: 1;
+    grid-row: 4;
+    
+}
+#rosa1{
+    background-color: pink;
+    top: 10%;
+    height: 96%;
+    border: solid black;
+    transform: rotateZ(-2.5deg);
+    top: 5%;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+#rosa2{
+    position: relative;
+    background-color: pink;
+    height: 95%;
+    border: solid black;
+    transform: rotateZ(-2.5deg);
+    bottom:97%;
+    left: 2%;
+    
+}
+#blanco{
+    background-color: white;
+    position: relative;
+    height: 95%;
+    border: solid black;
+    transform: rotateZ(-2.5deg);
+    bottom:194%;
+    left: 4%;
+    padding: 5%;
+}
+#nosotros{
+    width: 100%;
+}
+.seccion_galeria{
+    display: grid;
+    place-content: center;
+    align-content: start;
+    grid-template-columns: 80%;
+    grid-template-rows: auto 2.5fr 2.5fr 1fr;
+    background: linear-gradient(to bottom, rgb(255, 255, 117), rgb(255, 66, 45));
+    gap: 4%;
+}
+.seccion_galeria h1{
+    text-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    color: blue;
+    -webkit-text-stroke: 2px white;
+    padding-bottom: 4%;
+    font-size: clamp(1rem, 8vw, 2.5rem);
+    grid-row: 1;
+    align-self: center;
+    place-self: center;
+    font-family: "GulfsDisplay2";
+
+}
+.galeria{
+    border-radius: 5%;
+    border: solid 1px black;
+    padding: 5%;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    display: flex;
+    grid-column: 1;
+    grid-row: 2;
+    gap: 3%;
+    width: 100%;
+    place-self: center;
+    height: 100%;
+}
+.galeria img{
+    border: solid 1px black;
+    border-top-left-radius: 90% 60%;
+    border-top-right-radius: 90% 60%;
+    border-bottom-left-radius: 90% 60%;
+    border-bottom-right-radius: 90% 60%;
+    width: 0;
+    flex-grow: 1;
+    object-fit: cover;
+    opacity: 1;
+    transition: .5s ease;   
+}
+.galeria2{
+    border-radius: 5%;
+    border: solid 1px black;
+    padding: 5%;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    display: flex;
+    grid-column: 1;
+    grid-row: 3;
+    gap: 3%;
+    width: 100%;
+    place-self: center;
+    height: 100%;
+}
+.galeria2 img{
+    border: solid 1px black;
+    width: 0;
+    flex-grow: 1;
+    object-fit:cover;
+    opacity: 1;
+    transition: .5s ease;   
+}
+@keyframes slide {
+    0% {
+      transform: translateX(-10%);
+    }
+    100% {
+      transform: translateX(10%);
+    }
+  }
+.galeria {
+    animation: slide 10s linear infinite alternate;
+}
+@keyframes slide2 {
+    0% {
+      transform: translateX(10%);
+    }
+    100% {
+      transform: translateX(-10%);
+    }
+  }
+.galeria2 {
+    animation: slide2 10s linear infinite alternate;
+}
+.precios{
+    display: grid;
+    grid-template: 
+    "inicio       inicio"   0.5fr
+    "horas         horas"   0.5fr
+    "compromiso  ceremonia" 1fr
+    "digital      cabina"   1fr
+    "mapa          mapa"    0.5fr
+    "mapa          mapa"    0.5fr
+    "total        total"    0.5fr /
+      1fr           1fr;
+}
+.precios div{
+    border: solid 1px black;
+}
+.inicio{
+    background-color: pink;
+    grid-area: inicio;
+    text-align: left;
+    padding-top: 10%;
+    padding-bottom: 10%;
+    padding-left: 10%;
+    padding-right: 20%;
+    font-family: "GulfsDisplay2";
+    color:rgb(255, 66, 45);
+    font-size: clamp(1rem, 5vw, 2.5rem);
+    align-content: center;
+    line-height: 1;
+}
+
+.horas{
+    font-size: clamp(1rem, 6vw, 2.5rem);
+    font-family: "GulfsDisplay";
+    background-color: pink;
+    grid-area: horas;
+    color:#4180ff;
+    padding-top: 10%;
+    padding-bottom: 10%;
+    padding-left: 8%;
+    padding-right: 8%;
+}
+#pregunta{
+    position: relative;
+    width: 10%;
+    left: 50%;
+    bottom: 19%;
+    filter: invert(33%) sepia(100%) saturate(3000%) hue-rotate(200deg) brightness(100%) contrast(95%);
+}
+#tres{
+    position: relative;
+    font-family: "Anybody";
+    background-color: #125ef8;
+    color: white;
+    width: 10%;
+    text-align: center;
+    border-radius: 50%;
+    border: solid 1px black;
+    aspect-ratio: 1 / 1;
+    padding-top: 1.8%;
+    left: 90%;
+    bottom: 40%;
+}
+#tocadisco{
+    background-color: rgb(255, 255, 117);
+    height: 10%;
+    border-top-left-radius: 10% 100%;
+    border-top-right-radius: 10% 100%;
+    border-bottom-left-radius: 10% 100%;
+    border-bottom-right-radius: 10% 100%;
+}
+#disco{
+    position: relative;
+    width: 20%;
+    bottom: 25%;
+    left: 1%;
+}
+.compromiso{
+    font-size: clamp(1rem, 6vw, 3rem);
+    font-family: "GulfsDisplay";
+    background-color: rgb(255, 255, 117);
+    grid-area: compromiso;
+    color: rgb(255, 66, 45);
+    text-align: center;
+    padding-top: 30%;
+    padding-bottom:30%;
+    line-height: 1;
+
+}
+#pregunta-c{
+    position: relative;
+    width: 10%;
+    left: 38%;
+    bottom:17%;
+    filter: invert(26%) sepia(96%) saturate(3451%) hue-rotate(342deg) brightness(96%) contrast(100%);
+
+}
+#c{
+    position: relative;
+    right: 4%;
+}
+.compromiso h3{
+    padding-bottom: 10%;
+}
+#boton1{
+    background-color: rgb(255, 66, 45);
+    height: 25%;
+    border-top-left-radius: 50% 100%;
+    border-top-right-radius: 50% 100%;
+    border-bottom-left-radius: 50% 100%;
+    border-bottom-right-radius: 50% 100%;
+    width: 55%;
+    place-self: center;
+    border-right: solid 8px black;
+    border-bottom: solid 12px black;
+    align-content: center;
+}
+#contenedor_boton{
+    position: relative;
+    width: 50%;
+    height: 90%;
+    background-color: rgb(255, 255, 117);
+    border-radius: 50%;
+    left: 5%;
+    align-content: center;
+}
+#carita-boton{
+    width: 90%;
+    height: 90%;
+    object-fit: cover;
+    border-radius: 100%;
+    border: solid 1px black;
+    transform: rotate(-25deg);
+}
+#no{
+    padding-top: 25%;
+}
+.ceremonia{
+    background-color: white;
+    grid-area: ceremonia;
+    color: #125ef8;
+    text-align: center;
+    padding-top: 30%;
+    padding-bottom:30%;
+    line-height: 1;
+    font-size: clamp(1rem, 6vw, 3rem);
+    font-family: "GulfsDisplay";
+}
+#pregunta-c2{
+    position: relative;
+    width: 10%;
+    left: 34%;
+    bottom:17%;
+    filter: invert(33%) sepia(100%) saturate(3000%) hue-rotate(200deg) brightness(100%) contrast(95%);
+
+}
+#c2{
+    position: relative;
+    right: 4%;
+}
+.ceremonia h3{
+    padding-bottom: 10%;
+}
+#boton2{
+    background-color: pink;
+    height: 25%;
+    border-top-left-radius: 50% 100%;
+    border-top-right-radius: 50% 100%;
+    border-bottom-left-radius: 50% 100%;
+    border-bottom-right-radius: 50% 100%;
+    width: 55%;
+    place-self: center;
+    border-right: solid 8px black;
+    border-bottom: solid 12px black;
+    align-content: center;
+}
+#contenedor_boton2{
+    position: relative;
+    width: 50%;
+    height: 90%;
+    background-color: #125ef8;
+    border-radius: 50%;
+    left: 5%;
+    align-content: center;
+}
+#carita-boton2{
+    width: 90%;
+    height: 90%;
+    object-fit: cover;
+    border-radius: 100%;
+    border: solid 1px black;
+    transform: rotate(-25deg);
+}
+#no2{
+    padding-top: 25%;
+}
+.digital{
+    background-color: #125ef8;
+    grid-area: digital;
+    color: #ffffff;
+    text-align: center;
+    padding-top: 30%;
+    padding-bottom:10%;
+    line-height: 1;
+    font-size: clamp(1rem, 6vw, 3rem);
+    font-family: "GulfsDisplay";
+}
+#pregunta-c3{
+    position: relative;
+    width: 10%;
+    left: 25%;
+    bottom:11%;
+    filter: invert(100%) brightness(100%);
+
+}
+#c3{
+    position: relative;
+    right: 3%;
+}
+.digital h3{
+    padding-bottom: 5%;
+}
+#contenedor-ruleta{
+    border: 0px;
+    place-self: center;
+    align-content: center;
+}
+#ruleta{
+    width: 50%;
+    height: auto;
+    object-fit: cover;
+}
+#no3{
+    position: relative;
+    top: 20%;
+    color: rgb(37, 37, 209);
+}
+#pregunta-c4{
+    position: relative;
+    width: 10%;
+    left: 25%;
+    top: 9%;
+    filter: invert(20%) sepia(100%) saturate(3000%) hue-rotate(210deg) brightness(60%) contrast(100%);
+}
+#c4{
+    position: relative;
+    right: 3%;
+}
+.cabina{
+    background-color: rgb(255, 255, 117);
+    grid-area: cabina;
+    color: #125ef8;
+    text-align: center;
+    padding-top: 30%;
+    padding-bottom:10%;
+    line-height: 1;
+    font-size: clamp(1rem, 6vw, 3rem);
+    font-family: "GulfsDisplay";
+}
+#pregunta-c5{
+    position: relative;
+    width: 10%;
+    left: 20%;
+    bottom:12%;
+    filter: invert(33%) sepia(100%) saturate(3000%) hue-rotate(200deg) brightness(100%) contrast(95%);
+
+}
+#c5{
+    position: relative;
+    right: 4%;
+}
+.cabina h3{
+    padding-bottom: 5%;
+}
+#boton5{
+    position: relative;
+    top: 10%;
+    background-color: white;
+    height: 20%;
+    border-top-left-radius: 50% 100%;
+    border-top-right-radius: 50% 100%;
+    border-bottom-left-radius: 50% 100%;
+    border-bottom-right-radius: 50% 100%;
+    width: 75%;
+    place-self: center;
+    border-right: solid 8px black;
+    border-bottom: solid 12px black;
+
+}
+#contenedor_boton5{
+    border: 0px;
+    position: relative;
+    width: 100%;
+    height: 90%;
+    border-radius: 50%;
+    left: 5%;
+
+}
+#menos{
+    position: relative;
+    border: 0px;
+    width: 15%;
+    right: 40%;
+    top: 30%;
+    filter: invert(69%) sepia(6%) saturate(2751%) hue-rotate(296deg) brightness(106%) contrast(101%);
+}
+#mas{
+    position: relative;
+    border: 0px;
+    width: 15%;
+    left:30%;
+    bottom: 82%;
+    filter: invert(69%) sepia(6%) saturate(2751%) hue-rotate(296deg) brightness(106%) contrast(101%);
+}
+#no5{
+    position: relative;
+    top: 35%;
+}
+#rosadito{
+    position: relative;
+    left: 30%;
+    bottom: 25%;
+    border-radius: 50%;
+    height: 60%;
+    width: 30%;
+    background-color: pink;
+}
+#number{
+    color: white;
+}
+
+.mapa{
+    background-color: black;
+    grid-area: mapa;
+    padding: 5%;
+    line-height: 1;
+    font-size: clamp(1rem, 6vw, 3rem);
+    font-family: "GulfsDisplay";
+    color: white;
+    height: 100%;
+}
+.mapa h3{
+    text-align: start;
+}
+.mapa p{
+    text-align: end;
+    position: relative;
+    bottom: 7%;
+}
+#pregunta-m{
+    filter: invert(100%) sepia(36%) saturate(1145%) hue-rotate(243deg) brightness(113%) contrast(105%);
+    width: 5%;
+    position: relative;
+    bottom: 83%;
+    left: 20%;
+}
+#mapa{
+    height: auto;
+}
+.total{
+    background-color: rgb(255, 66, 45);
+    grid-area: total;
+    font-size: clamp(1rem, 6vw, 3rem);
+    padding: 10%;
+}
+.total p{
+    font-family: "GulfsDisplay";
+    color: pink;
+}
+.total h1{
+    font-family: "GulfsDisplay2";
+    color: rgb(255, 255, 117);
+}
+#argollas{
+    width: 30%;
+    grid-row: 3 / span 2;
+    grid-column: 1 / span 2;
+    place-self: center;
+}
+#camara{
+    width: 50%;
+    grid-row: 6 / span 2;
+    grid-column: 2;
+    place-self: center;
+}
+.contacto{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 2fr 1.5fr;
+    background-color: pink;
+    padding: 5%;
+}
+.envio{
+    display: none;
+}
+#frame-inicial{
+    display: grid;
+    grid-column: 1;
+    grid-row: 1;
+}
+#casados{
+    width: 80%;
+    height: 80%;
+    grid-column: 1;
+    grid-row: 1;
+    place-self: center;
+    z-index: 2;
+}
+#dj{
+    width: 30%;
+    grid-column: 1;
+    grid-row: 1;
+    position: relative;
+    left: 12%;
+    z-index: 1;
+}
+#corazon{
+    position: relative;
+    grid-column: 1;
+    grid-row: 1;
+    width: 13%;
+    left: 2%;
+    top: 35%;
+    z-index: 1;
+}
+#rayo{
+    grid-column: 1;
+    grid-row: 1;
+    position: relative;
+    width: 18%;
+    left: 12%;
+    top: 60%;
+    z-index: 1;
+}
+#sonrisa{
+    grid-column: 1;
+    grid-row: 1;
+    position: relative;
+    width: 18%;
+    left: 15%;
+    top: 82%;
+    z-index: 3;
+}
+#cerpentina-roja{
+    grid-column: 1;
+    grid-row: 1;
+    position: relative;
+    width: 38%;
+    left: 12%;
+    top: 75%;
+    z-index: 2;
+}
+#copas{
+    grid-column: 1;
+    grid-row: 1;
+    position: relative;
+    width: 20%;
+    left: 75%;
+    top: 75%;
+    z-index: 2;
+}
+#cerpentina-azul{
+    grid-column: 1;
+    grid-row: 1;
+    position: relative;
+    width: 15%;
+    left: 72%;
+    top: 55%;
+    z-index: 2;
+}
+#anillos-triples{
+    grid-column: 1;
+    grid-row: 1;
+    position: relative;
+    width: 20%;
+    left: 72%;
+    top: 37%;
+    z-index: 2;
+}
+#estrellas{
+    grid-column: 1;
+    grid-row: 1;
+    position: relative;
+    width: 10%;
+    left: 78%;
+    top: 28%;
+    z-index: 2;
+}
+#disco-dj{
+    grid-column: 1;
+    grid-row: 1;
+    position: relative;
+    width: 20%;
+    left: 70%;
+    top: 5%;
+    z-index: 2;
+}
+#expresion{
+    grid-column: 1;
+    grid-row: 1;
+    position: relative;
+    width: 20%;
+    left: 45%;
+    z-index: 1;
+}
+#frame-final{
+    display: grid;
+}
+.contacto h1{
+    font-family: "GulfsDisplay2";
+    color: #125ef8;
+    grid-column: 1;
+    grid-row: 1;
+    font-size: clamp(1rem, 6vw, 3rem);
+    padding-top: 5%;
+    height: 60%;
+}
+.contacto p{
+    position: relative;
+    font-family: "GulfsDisplay2";
+    grid-column: 1;
+    grid-row: 1;
+    color: black;
+    height: 10%;
+    top: 40%;
+    font-size: clamp(0.9rem, 2.9vw, 3rem);
+}
+.contacto h4{
+    font-family: "GulfsDisplay2";
+    color: #125ef8;
+    grid-column: 1;
+    grid-row: 1;
+    font-size: clamp(1rem, 3vw, 3rem);
+    padding-top: 5%;
+    height: 40%;
+    align-self: end;
+    align-content:center ;
+    color: rgb(255, 66, 45);
+}
+#left{
+    position: relative;
+    width:20%;
+    left: 20%;
+}
+#right{
+    position: relative;
+    left: 20%;
+    width: 70%;
+}
+#contenedor-right{
+    position: relative;
+    background-color: rgb(255, 66, 45);
+    border-radius: 50%;
+    width: 23%;
+    bottom: 100%;
+    left: 70%;
+}
+#flechas{
+    position: relative;
+    width: 40%;
+    grid-column: 1;
+    grid-row: 1; 
+    top: 78%;
+    left: 62%;
+    height: 15%;
+}
+#facha{
+    grid-column: 1;
+    grid-row: 1;
+    height: 2%;
+    width: 100%;
+    background-color: rgb(255, 66, 45);
+    place-self: center;
+    align-self: flex-end;
+}
+.pie{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    background-color: pink;
+    padding-top:5% ;
+}
+#redes{
+    place-self: center;
+    grid-column: 1;
+    grid-row: 1;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: 2fr 2fr;
+    border-left: double 8px black;
+    border-bottom: double 8px black;
+    width: 90%;
+    height: 100%;
+    background-color: white;
+
+}
+#redes p{
+    border: solid;
+}
+#redes div{
+    border: solid;
+}
+#sugerencia{
+    font-size: clamp(1rem, 4vw, 4rem);
+    font-family: "AnyBody";
+    grid-column: 1 / 8;
+    grid-row: 1;
+    line-height: 1;
+    padding: 2%;
+    align-self: center;
+    font-weight: bold;
+}
+#politica{
+    display: grid;
+    font-size: clamp(1rem, 4vw, 4rem);
+    grid-column: 1 / 5;
+    grid-row: 2;
+    padding: 3%;
+    align-self: center;
+    height: 100%;
+
+}
+#politica a{
+    font-weight: bold;
+    color: black;
+    align-self: center;
+}
+#facebook{
+    display: grid;
+    border-radius: 50%;
+    width: 80%;
+    background-color: rgb(119, 255, 255);
+    place-self: center;
+    aspect-ratio: 1 / 1;
+}
+#facebook img{
+    width: 30%;
+    place-self: center;
+}
+#instagram{
+    display: grid;
+    border-radius: 50%;
+    width: 80%;
+    background-color: pink;
+    place-self: center;
+    aspect-ratio: 1 / 1;
+}
+#instagram img{
+    width: 50%;
+    place-self: center;
+}
+#telegram{
+    display: grid;
+    border-radius: 50%;
+    width: 80%;
+    background-color: rgb(255, 255, 117);
+    place-self: center;
+    aspect-ratio: 1 / 1;
+    justify-self: center;
+}
+#telegram img{
+    width: 50%;
+    place-self: center;
+}
+div .contenedores{
+    display: grid;
+    place-items: center;
+}
+#chat {
+    position: fixed;    
+    bottom: 1%;         
+    left: 85%;         
+    width: 14%;          
+    height: 10%;
+    background-color: rgb(255, 255, 117);
+    border-radius: 50%; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: clamp(1rem, 4vw, 4rem);
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    aspect-ratio: 1 / 1;
+    z-index: 5;
+    border: solid black;
+  }
+
+
+@media (min-width: 768px) {
+
+    .boton-navegacion,
+    #checkbox-menu {
+        display: none;
+    }
+
+    #checkbox-menu:not(:checked) ~ .navbar {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        opacity: 1;
+        pointer-events: auto;
+        transform: none;
+        background-color: pink;
+        position: relative;
+        height: auto;
+        width: 100%;
+        padding-top: 0%;
+        position: fixed;
+
+    }
+
+    ul{
+        display: flex;
+        position: relative;
+        flex-direction: row;
+        justify-content: center;
+        align-items: start;
+        width: 100%;
+        height: auto;
+        gap: 1rem; 
+        gap: 5%;
+    }
+
+    .navbar li {
+        margin: 0;
+    }
+
+    .navbar ul a {
+        font-size: 1rem;
+        padding: 0.5rem;
+    }
+
+    #imagen_principal{
+        place-self: center;
+        position: absolute;
+        width: 35%;
+        height:70%;
+        border: solid black 2px;
+        border-top-left-radius: 90% 60%;
+        border-top-right-radius: 90% 60%;
+        border-bottom-left-radius: 90% 60%;
+        border-bottom-right-radius: 90% 60%;
+        object-fit:cover;
+    }
+    #enunciado{
+        z-index: 2;
+        font-size: clamp(3rem, 8vw, 2.5rem);
+        text-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+        -webkit-text-stroke: 1px blue;
+        position: relative;
+        bottom: 80%;
+    }
+    #cara_rosa{
+        z-index: 1;
+        grid-row: 1  ;
+        grid-column: 3 ;
+        width: 30%;
+        place-self: start;
+        align-self: start;
+        position: relative;
+        bottom: 52%;
+    }
+    #luna1{
+        grid-row: 2;
+        grid-column: 1;
+        place-self: start;
+        align-self: end;
+        width: 15%;
+        padding-left: 5%;
+        padding-bottom: 5%;
+    }
+    #luna2{
+        grid-column: 3;
+        grid-row: 2;
+        place-self: end;
+        width: 15%;
+        padding-right: 5%;
+        padding-bottom: 5%;
+    }
+    #m{
+        position: relative;
+        left: 26%;
+        width: 10%;
+        bottom: 170%;
+    }
+    
+    #star_x{
+        position: absolute;
+        z-index: 2;
+        width: 3%;
+        top: 15% ;
+    }
+    #star_y{
+        position: relative;
+        right: 22%;
+        z-index: 2;
+        width: 5%;
+        bottom: 200%;
+    }
+    #star_z{
+        position: relative;
+        bottom: 240%;
+        left: 20%;
+        z-index: 2;
+        width: 5%;
+    }
+    #espiral{
+        display: inline;
+        width: 10%;
+        z-index: 2;
+        position: relative;
+        bottom: 148%;
+        right: 16%;
+    }
+    #imagen_principal2{
+        display: inline;
+        position: absolute;
+        width: 18%;
+        border-radius: 20%;
+        border: solid 1px black;
+        top: 42%;
+        height: 40%;
+        object-fit: cover;
+    }
+    #imagen_principal3{
+        display: inline;
+        width: 15%;
+        position: absolute;
+        border-radius: 20%;
+        border: solid 1px black;
+        right: 2%;
+        bottom: 45%;
+        object-fit: cover;
+
+    }
+    #pie-inicio{
+        position: relative;
+        display: inline;
+        width: 50%;
+        z-index: 2;
+        grid-row: 2;
+        grid-column: 1;
+        top: 60%;
+        left: 18%;
+        color: black;
+        height: 30%;
+    }
+    #pie-inicio2{
+        position: relative;
+        display: inline;
+        width: 50%;
+        z-index: 2;
+        grid-row: 2;
+        grid-column: 3;
+        top: 60%;
+        color: black;
+        width: 100%;
+        height: 30%;
+    }
+    .nosotros{
+        background-color: rgb(255, 255, 117);
+        display: grid;
+        grid-template-rows: auto ;
+        grid-template-columns: 45% 45%;
+        padding-top: 5%;
+        place-content: center;
+    }
+    .nosotros h1{
+        grid-row: 1;
+        grid-column: 2;
+        font-family: "GulfsDisplay2";
+        font-size: clamp(3rem, 9vw, 5.5rem);
+        line-height: 0.8;
+        place-self: start;
+        align-self: end;
+        color: transparent;
+        -webkit-text-stroke: 2px blue;
+        padding-bottom: 4%;
+    }
+    .nosotros .parrafo{
+        grid-column: 2;
+        grid-row: 2;
+        font-family: 'Anybody';
+        font-weight: 650;
+        word-spacing: 10px;
+        font-size: clamp(1rem, 3vw, 1rem);
+        line-height: 1.5;
+        place-self: center;
+    }
+    #nupcialistas{
+        grid-row: 2;
+        grid-column: 2;
+        font-family: 'Anybody';
+        font-weight: 900;
+        font-size: clamp(0.8rem, 2.5vw, 2rem);
+        text-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+        height: 20%;
+        position: relative;
+        top: 100%;
+    }
+    #anillos{
+        position: relative;
+        align-self:center;
+        place-self: end;
+        right: 20%;
+        bottom: 70%;
+        grid-row: 3;
+        grid-column: 2;
+        width: 20%;
+    }
+    #nupciolistas{
+        position: relative;
+        align-self:center;
+        place-self: end;
+        right: 2%;
+        grid-row: 3;
+        grid-column: 2;
+        width: 20%;
+        bottom: 66%;
+    }
+    
+    .contenedor{
+        grid-column: 1;
+        grid-row: 1 / span 3;
+    }
+    #rosa1{
+        position: relative;
+        background-color: pink;
+        height: 95%;
+        border: solid black;
+        transform: rotateZ(-2.5deg);
+        box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+        top: 8%;
+    }
+    #rosa2{
+        position: relative;
+        background-color: pink;
+        height: 95%;
+        border: solid black;
+        transform: rotateZ(-2.5deg);
+        bottom:89%;
+        left: 2%;
+        
+    }
+    #blanco{
+        background-color: white;
+        position: relative;
+        height: 95%;
+        border: solid black;
+        transform: rotateZ(-2.5deg);
+        bottom:186%;
+        left: 4%;
+        padding: 5%;
+    }
+    .precios{
+        grid-template: 
+        "inicio       inicio    compromiso    ceremonia    digital"   1fr
+        "horas         horas    compromiso    ceremonia    digital"   1fr
+        "cabina        mapa        mapa         total        total"   1fr
+        "cabina        mapa        mapa         envia        envia"   1fr/
+          1fr           1fr        1fr            1fr          1fr;
+    }
+    .precios div{
+        border: solid 1px black;
+    }
+    .inicio{
+        background-color: pink;
+        font-size: clamp(1rem, 2vw, 2rem);
+        padding: 0;
+    }
+    .inicio h1{
+        position: relative;
+        left: 10%;
+    }
+    
+    .horas{
+        font-size: clamp(1rem, 1.5vw + 0.5rem, 2rem);
+        padding: 0;
+        
+    }
+    .horas h3{
+        position: relative;
+        top: 10%;
+        left: 10%;
+    }
+    #pregunta{
+        position: relative;
+        width: 5%;
+        left: 55%;
+        top: -9%;
+    }
+    #tres{
+        position: relative;
+        width: 7%;
+        height: 15%;
+        font-size: 13px;
+        aspect-ratio: 1 / 1;
+        left: 80%;
+        bottom: 10%;
+    }
+    #tocadisco{
+        position: relative;
+        height: 10%;
+        width: 80%;
+        left: 10%;
+        top: 10%;
+    }
+    #disco{
+        position: relative;
+        width: 10%;
+        bottom: 8%;
+        left: 11%;
+    }
+    .compromiso{
+        font-size: clamp(1rem, 1.5vw + 0.5rem, 2rem);
+        padding: 0; 
+    }
+    .compromiso h3{
+        padding: 0;
+        top: 14%;
+        position: relative;
+    }
+    #pregunta-c{
+        position: relative;
+        width: 10%;
+        left: 39%;
+        top: 6%;
+    
+    }
+    #boton1{
+        position: relative;
+        top: 25%;
+        height: 25%;
+        width: 50%;
+    }
+    #contenedor_boton{
+        position: relative;
+        width: 55%;
+        height: 65%;
+        left: 5%;
+    }
+    #carita-boton{
+        width: 85%;
+        height: 75%;
+        transform: rotate(0);
+        aspect-ratio: 1 / 1;
+    }
+    #no{
+        font-size: 30px;
+        padding: 0;
+        position: relative;
+        top: 30%;
+    }
+    .ceremonia{
+        font-size: clamp(1rem, 1.5vw + 0.5rem, 2rem);
+        padding: 0;
+    }
+    .ceremonia h3{
+        position: relative;
+        top: 14%;
+        padding: 0;
+    }
+    #pregunta-c2{
+        position: relative;
+        width: 10%;
+        left: 33%;
+        top: 6%;
+    
+    }
+    #boton2{
+        position: relative;
+        top: 25%;
+        height: 25%;
+        width: 50%;
+    }
+    #contenedor_boton2{
+        position: relative;
+        width: 55%;
+        height: 65%;
+        left: 5%;
+    }
+    #carita-boton2{
+        width: 85%;
+        height: 75%;
+        border: solid 1px black;
+        transform: rotate(0);
+        aspect-ratio: 1 / 1;
+    }
+    #no2{
+        font-size: 30px;
+        padding: 0;
+        position: relative;
+        top: 30%;
+    }
+    .digital{
+        font-size: clamp(1rem, 1.5vw + 0.5rem, 2rem);
+        padding: 0;
+    }
+    #pregunta-c3{
+        position: relative;
+        width: 10%;
+        left: 25%;
+        top:6%;
+    
+    }
+    .digital h3{
+        position: relative;
+        top: 14%;
+        padding: 0;
+    }
+    #contenedor-ruleta{
+        position: relative;
+        top: 20%;
+    }
+    #ruleta{
+        width: 45%;
+    }
+    #no3{
+        padding: 0;
+        position: relative;
+        top: 20%;
+    }
+    .cabina{
+        font-size: clamp(1rem, 1.5vw + 0.5rem, 2rem);
+        padding: 0;
+    }
+    #pregunta-c5{
+        position: relative;
+        width: 10%;
+        left: 20%;
+        top:6%;
+    
+    }
+    .cabina h3{
+        position: relative;
+        top: 14%;
+        padding: 0;
+    }
+    #boton5{
+        position: relative;
+        top: 23%;
+        height: 20%;
+        width: 50%;
+    }
+    #contenedor_boton5{
+        position: relative;
+        width: 100%;
+        height: 100%;
+        left: 5%;
+    
+    }
+    #menos{
+        position: relative;
+        width: 15%;
+        right: 36%;
+        top: 26%;
+    }
+    #mas{
+        position: relative;
+        width: 15%;
+        left:30%;
+        bottom: 62%;
+    }
+    #no5{
+        padding: 0;
+        position: relative;
+        top: 30%;
+    }
+    #rosadito{
+        position: relative;
+        left: 30%;
+        bottom: 18%;
+        height: 50%;
+        width: 40%;
+    }
+    
+    .mapa{
+        font-size: clamp(1rem, 1.5vw + 0.5rem, 2rem);
+        padding: 0;
+    }
+    .mapa h3{
+        position: relative;
+        top: 14%;
+        left: 10%;
+    }
+    .mapa p{
+        font-size: clamp(1rem, 1.5vw + 0.5rem, 2rem);
+        position: relative;
+        top: 7%;
+        right: 5%;
+    }
+    #pregunta-m{
+        width: 5%;
+        position: relative;
+        bottom: 45%;
+        left: -40%;
+    }
+    #mapa{
+        position: relative;
+        height: 50%;
+        top: 20%;
+        left: 20%;
+    }
+    .total{
+        font-size: clamp(1rem, 1.5vw + 0.5rem, 2rem);
+        padding: 0;
+    }
+    .total p{
+        position: relative;
+        top: 25%;
+        left: 20%;
+        width: 20%;
+    }
+    .total h1{
+        position: relative;
+        top: 20%;
+        left: 20%;
+        width: 60%;
+    }
+    #argollas{
+        width: 30%;
+        grid-row: 2 / span 2;
+        grid-column: 2 / span 2;
+        place-self: center;
+    }
+    #camara{
+        width: 30%;
+        grid-row: 2 / span 2;
+        grid-column: 4 / span 2;
+    }
+    .contacto{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 2fr 1.5fr;
+        background-color: pink;
+        padding: 5%;
+    }
+
+    #chat {       
+        width: 10%;
+        left: 85%;
+        height: 12%;   
+    }
+    .envio{
+        display: inline;
+        grid-area: envia;
+        font-family: "GulfsDisplay";
+        font-size: clamp(1rem, 1.5vw + 0.5rem, 2rem);
+    }
+    .envio h1{
+        width: 40%;
+    }
+    #presiona{
+        display: grid;
+        position: relative;
+        border-radius: 50%;
+        background-color: rgb(255, 66, 45);
+        width: 25%;
+        height: 50%;
+        border-right: solid 8px black;
+        border-bottom: solid 8px black;
+        left: 60%;
+        bottom: 25%;
+
+    }
+    #presiona p{
+        font-size: clamp(0.8rem, 1vw + 0.3rem, 1.5rem);
+        text-align: center;
+        place-self: center;
+    }
+    #email{
+        position: relative;
+        width: 50%;
+        height: 5%;
+        background-color: rgb(255, 66, 45);
+        left: 10%;
+        top: 30%;
+        border: 0;
+    }
+    .envio #p-email{
+        position: relative;
+        font-size: clamp(0.8rem, 1vw + 0.3rem, 1.5rem);
+        color: rgb(255, 66, 45);
+        top: 30%;
+        left: 10%;
+        width: 40%;
+    }
+    .envio h1{
+        position: relative;
+        top: 20%;
+        left: 10%;
+        line-height: 0.8;
+    }
+    .contacto{
+        padding: 0;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+        padding-top: 5%;
+    }
+    #frame-inicial{
+        grid-column: 1;
+        grid-row: 1 / span 6 ;
+    }      
+    #frame-final{
+        grid-column: 2;
+        grid-row: 1 / span 2 ;
+    }
+    .contacto p{
+        position: relative;
+        top: 90%;
+        font-size: clamp(0.8rem, 1vw + 0.2rem, 1.5rem);
+    }
+    .contacto h1{
+        font-size: clamp(1rem, 1.5vw + 1rem, 2rem);
+    }
+    .contacto h4{
+        position: relative;
+        top: 80%;
+    }
+    #flechas{
+        position: relative;
+        top: 140%;
+        width: 35%;
+    }
+    #facha{
+        position: relative;
+        top: 90%;
+    }
+    #left{
+        top: 100%;
+    }
+    #redes{
+        position: relative;
+        width: 50%;
+        grid-template-columns: repeat(8, 1fr);
+        grid-template-rows: 1fr;
+        align-items: center;
+        bottom: 200%;
+        left: 23%;
+    }
+    #sugerencia{
+        position: relative;
+        font-size: clamp(0.4rem, 1vw + 0.1rem, 1.5rem);
+        grid-column: 1 / 4;
+        grid-row: 1;
+        height: 100%;
+        text-align: center;
+        padding: 10%;
+    }
+    #politica{
+        font-size: clamp(0.4rem, 1vw + 0.1rem, 1.5rem);
+        grid-column: 4 / 6;
+        grid-row: 1;
+        text-align: center;
+    }
+    .contenedores{
+        height: 100%;
+    }
+}

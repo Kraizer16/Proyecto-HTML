@@ -35,16 +35,16 @@ body {
     min-height: 100%;
     background-color: pink;
 }
-
+nav{
+    grid-area: nav;
+}
 header{
     grid-area: header;
 }
 main{
     grid-area: contenido;
 }
-nav{
-    grid-area: nav;
-}
+
 footer{
     grid-area: pie;
 }
@@ -1020,6 +1020,7 @@ header{
     grid-template-rows: 1fr;
     background-color: pink;
     padding-top:5% ;
+    padding-bottom: 15%;
 }
 #redes{
     place-self: center;
@@ -1771,6 +1772,9 @@ div .contenedores{
     }
     #left{
         top: 100%;
+    }
+    .pie{
+        padding-bottom: 0;
     }
     #redes{
         position: relative;

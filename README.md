@@ -3,7 +3,7 @@
 Este proyecto consiste en el desarrollo de un sitio web de una sola página para una pareja de emprendedores en fotografía de bodas. El sitio muestra información de promoción y estimación de costos, diseñado completamente con HTML y CSS, sin el uso de frameworks o librerías.
 
 ## Tabla de Contenidos
-- [Objetivo del Proyecto](#bjetivo-del-royecto)
+- [Objetivo del Proyecto](#bjetivo-del-proyecto)
 - [Instalación](#Instalación)
 - [Uso](#uso)
 - [Características](#características)
@@ -36,7 +36,7 @@ El sitio es completamente estático y presenta las siguientes secciones:
   Muestra una selección de trabajos previos.
 - #### recios:
   Sección con los precios y paquetes disponibles.
-- #### Contacto:
+- #### Contactos:
   Formulario y opciones de contacto.
 
 ## Características
@@ -50,20 +50,20 @@ El sitio es completamente estático y presenta las siguientes secciones:
 
 ## Estructura del Proyecto
 
--index.html - Contiene la estructura básica de la página.
--styles/ - Carpeta de estilos:
--style.css - Archivo con los estilos aplicados en el proyecto.
--img/ - Carpeta con todas las imágenes utilizadas en el sitio.
--fuentes/ - Carpeta con fuentes personalizadas utilizadas.
+- #### index.html - Contiene la estructura básica de la página.
+- #### styles/ - Carpeta de estilos:
+- #### style.css - Archivo con los estilos aplicados en el proyecto.
+- #### img/ - Carpeta con todas las imágenes utilizadas en el sitio.
+- #### fuentes/ - Carpeta con fuentes personalizadas utilizadas.
 
 ## Restricciones
 
 Este proyecto cumple con las siguientes restricciones:
 
--Desarrollo exclusivo en HTML y CSS.
--Código ordenado y organizado, con nombres significativos en clases e ID.
--Navegación y contenido correctamente enlazados y sin errores en las rutas.
--No se utilizó ningún software generador de código HTML o CSS.
+- #### Desarrollo exclusivo en HTML y CSS.
+- #### Código ordenado y organizado, con nombres significativos en clases e ID.
+- #### Navegación y contenido correctamente enlazados y sin errores en las rutas.
+- #### No se utilizó ningún software generador de código HTML o CSS.
 
 ## Contribuciones
 
@@ -76,4 +76,4 @@ Realiza los cambios y confírmalos (git commit -m 'Descripción de cambios').
 Envía una solicitud de extracción.
 
 ## Contacto
-Para consultas o sugerencias, por favor contáctame en marlonacg1603@gmail.com o Instagram: marloncg_1.
+#### Para consultas o sugerencias, por favor contáctame en marlonacg1603@gmail.com o Instagram: marloncg_1.

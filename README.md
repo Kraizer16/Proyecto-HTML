@@ -21,7 +21,7 @@ El objetivo de este proyecto es desarrollar una página web estática y responsi
 Para ejecutar este proyecto en tu entorno local:
 1. Clona el repositorio: 
    ```bash
-   git clone https://github.com/usuario/proyecto-html-css.git
+   git clone https://github.com/Kraizer16/Proyecto-HTML.git
 Abre el archivo index.html en tu navegador para ver la página o usa la extensión Live Server en Visual Studio Code para una experiencia interactiva.
 
 ## Uso
@@ -69,7 +69,7 @@ Este proyecto cumple con las siguientes restricciones:
 
 Las contribuciones son bienvenidas. Si deseas contribuir:
 
-Crea una rama (git checkout -b mejora-idea).
+Crea una rama (git checkout -b "mejora-idea").
 
 Realiza los cambios y confírmalos (git commit -m 'Descripción de cambios').
 

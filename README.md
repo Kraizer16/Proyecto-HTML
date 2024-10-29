@@ -52,7 +52,7 @@ El sitio es completamente estático y presenta las siguientes secciones:
 
 - #### index.html - Contiene la estructura básica de la página.
 - #### styles/ - Carpeta de estilos:
-- #### style.css - Archivo con los estilos aplicados en el proyecto.
+    - #### style.css - Archivo con los estilos aplicados en el proyecto.
 - #### img/ - Carpeta con todas las imágenes utilizadas en el sitio.
 - #### fuentes/ - Carpeta con fuentes personalizadas utilizadas.
 

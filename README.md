@@ -3,7 +3,7 @@
 Este proyecto consiste en el desarrollo de un sitio web de una sola página para una pareja de emprendedores en fotografía de bodas. El sitio muestra información de promoción y estimación de costos, diseñado completamente con HTML y CSS, sin el uso de frameworks o librerías.
 
 ## Tabla de Contenidos
-- [Objetivo del Proyecto](#bjetivo-del-proyecto)
+- [Objetivo del Proyecto](#objetivo-del-proyecto)
 - [Instalación](#Instalación)
 - [Uso](#uso)
 - [Características](#características)
